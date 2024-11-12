@@ -1,0 +1,47 @@
+/* Основные стили сброса */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стили для фона */
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Фоновой блок */
+.hero-section {
+    background-image: url('https://path-to-image.com/lisynetska44.jpg'); /* Поменяйте URL на ссылку на нужное изображение */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Стили заголовка */
+.hero-content h1 {
+    font-size: 3em;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Стили для описания */
+.description {
+    padding: 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.description p {
+    font-size: 1.2em;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
