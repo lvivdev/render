@@ -14,7 +14,7 @@ body, html {
 
 /* Фоновой блок */
 .hero-section {
-    background-image: url('https://pixabay.com/ru/photos/%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8C%D1%8F-%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D0%BA%D0%B0-815297/'); /* Поменяйте URL на ссылку на нужное изображение */
+    background-image: url('https://pixabay.com/ru/photos/photo/2015/06/19/21/24/avenue-815297_960_720.jpg'); /* Поменяйте URL на ссылку на нужное изображение */
     background-size: cover;
     background-position: center;
     height: 100vh;
