@@ -45,3 +45,25 @@ body, html {
     margin: 0 auto;
     line-height: 1.6;
 }
+.login-section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+#login-form {
+    display: inline-block;
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#login-form label, #login-form input, #login-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#login-form input, #login-form button {
+    padding: 10px;
+    font-size: 1em;
+}
