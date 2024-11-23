@@ -14,9 +14,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('Вы успешно вошли!');
+            window.location.href = '/dashboard.html';
         } else {
-            alert('Ошибка входа!');
+            alert('Invalid username or password!');
         }
     })
     .catch(error => console.error('Ошибка:', error));
