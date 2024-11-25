@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Про кооператив</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 <header class="main-header">
@@ -22,27 +22,14 @@
 </header>
 
 <main>
-    <section class="welcome-section">
-        <h1>Вітаємо на панелі управління</h1>
-        <p>Це ваша головна сторінка, де ви можете отримати доступ до важливої інформації.</p>
+    <section class="content-section">
+        <h1>Про кооператив</h1>
+        <p>Кооператив "Айдарет" був заснований у 2024 році з метою створення спільноти для взаємодопомоги та розвитку.</p>
     </section>
 </main>
 
 <footer class="main-footer">
     <p>© 2024 Айдарет. Всі права захищені.</p>
 </footer>
-
-<script>
-        document.getElementById('logout-btn').addEventListener('click', function() {
-            fetch('https://your-backend-api.com/logout', {
-                method: 'POST',
-                credentials: 'include'
-            })
-            .then(() => {
-                window.location.href = 'index.html';
-            });
-        });
-    </script>
 </body>
 </html>
-
