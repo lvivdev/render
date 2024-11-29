@@ -7,33 +7,64 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="login-section">
-        <form id="login-form">
-            <h2>Вход</h2>
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Войти</button>
-        </form>
-    </section>    
-    <!-- Блок с фоновым изображением и заголовком -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Айдарет</h1>
-        </div>
-    </section>
-    
-    
-    <!-- Блок с текстовым описанием -->
-    <section class="description">
-        <p>Вул. Лисинецька, 44 — мальовниче місце в серці Львова, що поєднує в собі красу архітектури та затишок міського життя. Відома своєю історією, ця вулиця пропонує чудові краєвиди, спокій та атмосферу стародавнього міста.</p>
-    </section>
+<!-- Header Section -->
+<header class="main-header">
+    <div class="logo">Айдарет</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">Про кооператив</a></li>
+            <li><a href="services.html">Послуги</a></li>
+            <li><a href="news.html">Новини</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+            <li><button id="logout-btn">Вийти</button></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Подключение JavaScript-файла -->
-    <script src="login.js"></script>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Айдарет</h1>
+    </div>
+</section>
 
+<!-- Login Section -->
+<section class="welcome-section login-section">
+    <form id="login-form">
+        <h2>Вхід</h2>
+        <label for="username">Ім'я користувача:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Увійти</button>
+    </form>
+</section>
+
+<!-- Description Section -->
+<section class="welcome-section">
+    <p>Вул. Лисинецька, 44 — мальовниче місце в серці Львова, що поєднує в собі красу архітектури та затишок міського життя. Відома своєю історією, ця вулиця пропонує чудові краєвиди, спокій та атмосферу стародавнього міста.</p>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <p>© 2024 Айдарет. Всі права захищені.</p>
+</footer>
+
+<!-- JavaScript -->
+<script src="login.js"></script>
+<script>
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            fetch('https://render-backend-0epw.onrender.com/logout', {
+                method: 'POST',
+                credentials: 'include'
+            })
+            .then(() => {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
 </body>
 </html>
