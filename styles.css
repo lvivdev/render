@@ -175,3 +175,33 @@ body, html {
 .login-section form button:hover {
     background-color: #16a085;
 }
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.centered-container h1 {
+    font-size: 3em;
+    color: #2c3e50;
+}
+
+.centered-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #18bc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.centered-container button:hover {
+    background-color: #16a085;
+}

@@ -3,37 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лисинецька 44, Львів</title>
+    <title>Айдарет - Вхід</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- Header Section -->
-<header class="main-header">
-    <div class="logo">Айдарет</div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="about.html">Про кооператив</a></li>
-            <li><a href="services.html">Послуги</a></li>
-            <li><a href="news.html">Новини</a></li>
-            <li><a href="contacts.html">Контакти</a></li>
-            <li><button id="logout-btn">Вийти</button></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="hero-content">
-        <h1>Айдарет</h1>
-    </div>
-</section>
-
-<!-- Login Section -->
-<section class="welcome-section login-section">
+<div class="centered-container">
+    <h1>Айдарет</h1>
     <form id="login-form">
-        <h2>Вхід</h2>
-        <label for="username">Ім'я користувача:</label>
+        <label for="username">Логін:</label>
         <input type="text" id="username" name="username" required>
 
         <label for="password">Пароль:</label>
@@ -41,29 +18,30 @@
 
         <button type="submit">Увійти</button>
     </form>
-</section>
+</div>
 
-<!-- Description Section -->
-<section class="welcome-section">
-    <p>Вул. Лисинецька, 44 — мальовниче місце в серці Львова, що поєднує в собі красу архітектури та затишок міського життя. Відома своєю історією, ця вулиця пропонує чудові краєвиди, спокій та атмосферу стародавнього міста.</p>
-</section>
-
-<!-- Footer -->
-<footer class="main-footer">
-    <p>© 2024 Айдарет. Всі права захищені.</p>
-</footer>
-
-<!-- JavaScript -->
-<script src="login.js"></script>
 <script>
-        document.getElementById('logout-btn').addEventListener('click', function() {
-            fetch('https://render-backend-0epw.onrender.com/logout', {
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('http://localhost:3000/login', {
                 method: 'POST',
-                credentials: 'include'
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
             })
-            .then(() => {
-                window.location.href = 'index.html';
-            });
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        localStorage.setItem('isLoggedIn', 'true');
+                        alert('Вхід успішний!');
+                        window.location.href = 'about.html'; // Redirect after login
+                    } else {
+                        alert('Невірний логін або пароль!');
+                    }
+                });
         });
     </script>
 </body>
