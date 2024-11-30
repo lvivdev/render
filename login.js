@@ -1,22 +1,23 @@
-document.getElementById('login-form').addEventListener('submit', function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.querySelector("#loginForm");
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.querySelector("#email").value;
+        const password = document.querySelector("#password").value;
 
-    fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.success) {
-                localStorage.setItem('isLoggedIn', 'true');
-                alert('Вхід успішний!');
-                window.location.href = 'about.html'; // Redirect after login
-            } else {
-                alert('Невірний логін або пароль!');
-            }
+        const response = await fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
         });
+
+        if (response.ok) {
+            window.location.href = "/dashboard.html";
+        } else {
+            alert("Login failed. Check your credentials.");
+        }
+    });
 });

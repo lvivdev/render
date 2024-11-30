@@ -1,48 +1,28 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Айдарет - Вхід</title>
+    <title>Кооператив "Айдарет"</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="centered-container">
-    <h1>Айдарет</h1>
-    <form id="login-form">
-        <label for="username">Логін:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Увійти</button>
-    </form>
-</div>
-
-<script>
-        document.getElementById('login-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            fetch('http://localhost:3000/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password }),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        localStorage.setItem('isLoggedIn', 'true');
-                        alert('Вхід успішний!');
-                        window.location.href = 'about.html'; // Redirect after login
-                    } else {
-                        alert('Невірний логін або пароль!');
-                    }
-                });
-        });
-    </script>
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="news.html">News</a>
+        <a href="contacts.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+<main>
+    <h1>Welcome to Кооператив "Айдарет"</h1>
+    <p>Your trusted partner for urban gardening in Львів!</p>
+</main>
+<footer>
+    <p>&copy; 2024 Кооператив "Айдарет". All Rights Reserved.</p>
+</footer>
 </body>
 </html>
