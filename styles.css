@@ -1,39 +1,61 @@
+/* Загальні стилі */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #111;
+    color: #eee;
     line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
 }
 
+/* Хедер на всю ширину */
 header {
-    background: #007bff;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    text-decoration: underline;
+    color: #ccc;
 }
 
-footer {
+/* Основна частина */
+main {
+    padding: 80px 20px;
     text-align: center;
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2rem;
+}
+
+/* Футер */
+footer {
+    background-color: #000;
+    color: #888;
+    text-align: center;
+    padding: 15px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
+    font-size: 0.9rem;
 }
